@@ -180,7 +180,7 @@ At this point you should be able to surf to the application using the ingress ho
 
 When you press the `Login` button, you should be redirected to the AppID login page.  After providing your credentials, you should be redirected back to the application, with your user information from AppID dumped to the screen:
 
-![alt text](https://github.ibm.com/robobob/appid-sample/blob/master/images/appid5.png)
+![alt text](images/appid5.png)
 
 Pressing the `Logout` button will log you out of the service.
 
@@ -195,11 +195,11 @@ Everything hanging off `/secure` will be intercepted by AppID and checked to see
 
 To log out, IKS also supports an AppID logout URL. However, it always forces a redirect back to the AppID login page.  To avoid this, I added a server side logout function to remove the AppID cookies from the browser:
 
-![alt text](https://github.ibm.com/robobob/appid-sample/blob/master/images/appid8.png)
+![alt text](images/appid8.png)
 
 On the client side, the Javascript to perform logout looks like this:
 
-![alt text](https://github.ibm.com/robobob/appid-sample/blob/master/images/appid9.png)
+![alt text](images/appid9.png)
 
 Note the code comments.  If you have just enabled cloud directory, then you are fine.  However, if you have enabled a SAML provider and want to ensure your credentials are cleared there as well, you need to redirect the browser to the supplied `logout.html`.
 
