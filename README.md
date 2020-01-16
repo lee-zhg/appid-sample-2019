@@ -14,11 +14,11 @@ This repository includes a working sample you can use as a base to incorporate i
 
 Find the AppID service in the IBM Cloud catalogue and provision into your account.  Once provisioned, initiate the service and enable the cloud directory:
 
-![alt text](https://github.ibm.com/robobob/appid-sample/blob/master/images/appid1.png)
+![alt text](images/appid1.png)
 
 Now add a user or two:
 
-![alt text](https://github.ibm.com/robobob/appid-sample/blob/master/images/appid2.png)
+![alt text](images/appid2.png)
 
 ## Step 2 - Pull the AppID Service Secret into your namespace:
 
@@ -79,7 +79,7 @@ Email Address []:
 
 You can find your ingress subdomain on your cluster overview page in IBM Cloud:
 
-![alt text](https://github.ibm.com/robobob/appid-sample/blob/master/images/appid3.png)
+![alt text](images/appid3.png)
 
 ## Step 5 - Deploy the application
 
@@ -163,7 +163,7 @@ You need to register your application with your AppID instance.  You do this by 
 
 Go back to your AppID instance and select Manage Authentication-->Authentication Settings:
 
-![alt text](https://github.ibm.com/robobob/appid-sample/blob/master/images/appid6.png)
+![alt text](images/appid6.png)
 
 
 Add the following web direct URL to the configuration, substituting in your fully qualfied hostname:
@@ -176,7 +176,7 @@ https://appidsample.clustername.us-east.containers.mybluemix.nea/secure/appid_ca
 
 At this point you should be able to surf to the application using the ingress host name:
 
-![alt text](https://github.ibm.com/robobob/appid-sample/blob/master/images/appid4.png)
+![alt text](images/appid4.png)
 
 When you press the `Login` button, you should be redirected to the AppID login page.  After providing your credentials, you should be redirected back to the application, with your user information from AppID dumped to the screen:
 
@@ -189,7 +189,7 @@ Pressing the `Logout` button will log you out of the service.
 
 If you take a look at the server code, you will see that all secure operations hang off the `/secure` URL:
 
-![alt text](https://github.ibm.com/robobob/appid-sample/blob/master/images/appid7.png)
+![alt text](images/appid7.png)
 
 Everything hanging off `/secure` will be intercepted by AppID and checked to see if you are logged in and have access to the service.  The resulting call on the server side will contain an `Authorization` header in the request bearing the identity token of the logged in user.  The above sample code uses that token to retreive the client details from AppID.
 
@@ -205,7 +205,7 @@ Note the code comments.  If you have just enabled cloud directory, then you are 
 
 This file uses a hidden frame to call the SAML provider secretly to remove your credentials:
 
-![alt text](https://github.ibm.com/robobob/appid-sample/blob/master/images/appid10.png)
+![alt text](images/appid10.png)
 
 You will need to change the URL on line 52 to the correct URL for your SAML provider.  The IBM SAML providers can be found here:
 
